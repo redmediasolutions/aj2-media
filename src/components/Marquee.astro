@@ -1,0 +1,88 @@
+---
+const items = [
+  'Acoustic Treatment',
+  'Sound Proofing',
+  'Audio Engineering',
+  'Overhead Rigging',
+  'Training Solutions',
+  'Certified Installation',
+];
+---
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {Array.from({ length: 2 }).map(() => (
+      <ul class="marquee-set">
+        {items.map((item) => (
+          <li>
+            <span class="marquee-word">{item}</span>
+            <span class="marquee-dot">●</span>
+          </li>
+        ))}
+      </ul>
+    ))}
+  </div>
+</div>
+
+<style>
+  .marquee {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    overflow: hidden;
+    padding-block: 1.5rem;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 32s linear infinite;
+  }
+
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-set {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .marquee-set li {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    padding-inline: 1.1rem;
+  }
+
+  .marquee-word {
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--line-strong);
+    white-space: nowrap;
+    transition: color 0.3s var(--ease-out), -webkit-text-stroke 0.3s var(--ease-out);
+  }
+
+  .marquee:hover .marquee-word {
+    color: var(--ink-faint);
+  }
+
+  .marquee-dot {
+    color: var(--accent);
+    font-size: 0.7rem;
+  }
+
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+</style>

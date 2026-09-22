@@ -1,0 +1,189 @@
+---
+const features = [
+  'Room Reflection Mapping',
+  'Overhead Rigging Design',
+  'Certified Installation',
+  'Final Calibration',
+];
+---
+
+<section class="section rigging" id="rigging">
+  <div class="wrap rigging-grid">
+    <div class="rigging-copy" data-reveal="left">
+      <p class="eyebrow">System</p>
+      <h2 class="display section-title">Audio Engineering &amp; Rigging</h2>
+
+      <p class="rigging-lead">
+        We understand how critical clear, balanced sound is to your worship environment.
+        That's why we do far more than simply supply gear — we serve as your sound partner
+        from concept to final calibration.
+      </p>
+
+      <div class="rigging-exec">
+        <h3>Execution</h3>
+        <p>
+          Our team manages every detail of audio design and overhead rigging, mapping room
+          reflections, engineering speaker placement, and executing safe, certified installations.
+        </p>
+      </div>
+
+      <ul class="rigging-features" data-reveal-group>
+        {features.map((f, i) => (
+          <li data-reveal="up" style={`--i:${i}`}>
+            <span class="rigging-check">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8.5L6 12.5L14 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            {f}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="rigging-media" data-reveal="right">
+      <figure class="rigging-photo rigging-photo-a">
+        <img src="/images/ark-stage-rig.webp" alt="Line array suspension and rigging above a concert stage" loading="lazy" />
+        <figcaption>Line Array Suspension &amp; Rigging</figcaption>
+      </figure>
+      <figure class="rigging-photo rigging-photo-b">
+        <img src="/images/studio-blue-guitars.webp" alt="Rehearsal and capture suite with instruments and acoustic panels" loading="lazy" />
+        <figcaption>Rehearsal &amp; Capture Suite</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .rigging {
+    border-top: 1px solid var(--line);
+  }
+
+  .rigging-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: start;
+  }
+
+  .section-title {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    margin-top: 0.7rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .rigging-lead {
+    color: var(--ink-dim);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 42ch;
+  }
+
+  .rigging-exec {
+    margin-top: 2.2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .rigging-exec h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    margin-bottom: 0.8rem;
+  }
+
+  .rigging-exec p {
+    color: var(--ink-dim);
+    font-size: 0.96rem;
+    line-height: 1.65;
+    max-width: 42ch;
+  }
+
+  .rigging-features {
+    margin-top: 2.4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem 1rem;
+  }
+
+  .rigging-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+
+  .rigging-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--accent-ink);
+    flex-shrink: 0;
+  }
+
+  .rigging-media {
+    display: grid;
+    gap: 1.1rem;
+    position: relative;
+  }
+
+  .rigging-photo {
+    margin: 0;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .rigging-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s var(--ease-out);
+  }
+
+  .rigging-photo:hover img {
+    transform: scale(1.04);
+  }
+
+  .rigging-photo-a {
+    aspect-ratio: 16 / 10;
+  }
+
+  .rigging-photo-b {
+    aspect-ratio: 16 / 10;
+    margin-left: clamp(1.5rem, 6vw, 4rem);
+    width: calc(100% - clamp(1.5rem, 6vw, 4rem));
+  }
+
+  .rigging-photo figcaption {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: rgba(11,10,8,0.72);
+    padding: 0.4rem 0.7rem;
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+  }
+
+  @media (max-width: 900px) {
+    .rigging-grid {
+      grid-template-columns: 1fr;
+    }
+    .rigging-features {
+      grid-template-columns: 1fr;
+    }
+    .rigging-photo-b {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+</style>

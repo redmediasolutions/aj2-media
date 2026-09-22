@@ -1,0 +1,108 @@
+---
+const solutions = [
+  {
+    n: '01',
+    name: 'Acoustic Treatment',
+    body: 'Church acoustic solutions designed for crystal-clear preaching. We treat church acoustics so no word of the sermon is lost.',
+  },
+  {
+    n: '02',
+    name: 'Sound Proofing',
+    body: 'Complete soundproofing: worship freely without disturbing — or being disturbed by — the neighborhood.',
+  },
+  {
+    n: '03',
+    name: 'Training Solutions',
+    body: 'Complete audio setups and volunteer coaching: zero technical headaches, every weekend.',
+  },
+];
+---
+
+<section class="section solutions" id="solutions">
+  <div class="wrap">
+    <div class="section-head" data-reveal="up">
+      <p class="eyebrow">Key Solutions</p>
+      <h2 class="display section-title">Sound proofing, built for the sanctuary</h2>
+    </div>
+
+    <div class="sol-grid" data-reveal-group>
+      {solutions.map((s, i) => (
+        <article class="sol-card" data-reveal="up" style={`--i:${i}`}>
+          <span class="sol-num">{s.n}</span>
+          <h3>{s.name}</h3>
+          <p>{s.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .solutions {
+    border-top: 1px solid var(--line);
+    background: var(--bg-soft);
+  }
+
+  .sol-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .sol-card {
+    position: relative;
+    background: var(--bg-soft);
+    padding: 2.6rem 2.2rem;
+    transition: background 0.4s var(--ease-out);
+  }
+
+  .sol-card:hover {
+    background: var(--panel);
+  }
+
+  .sol-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--accent-2);
+    margin-bottom: 2.2rem;
+  }
+
+  .sol-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+    color: var(--ink);
+  }
+
+  .sol-card p {
+    color: var(--ink-dim);
+    font-size: 0.96rem;
+    line-height: 1.65;
+    max-width: 32ch;
+  }
+
+  .sol-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.5s var(--ease-out);
+  }
+
+  .sol-card:hover::before {
+    width: 100%;
+  }
+
+  @media (max-width: 860px) {
+    .sol-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

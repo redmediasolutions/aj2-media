@@ -1,0 +1,110 @@
+---
+const brands = [
+  { name: 'RCF', sub: '' },
+  { name: 'QSC', sub: '' },
+  { name: 'JBL', sub: 'by Harman' },
+  { name: 'LD', sub: '' },
+  { name: 'behringer', sub: '' },
+  { name: 'DAS AUDIO', sub: '' },
+];
+---
+
+<section class="section hardware" id="hardware">
+  <div class="wrap">
+    <div class="hw-head">
+      <div data-reveal="up">
+        <p class="eyebrow">Pro Audio Solutions</p>
+        <h2 class="display section-title">Tier-One Hardware</h2>
+      </div>
+      <p class="hw-copy" data-reveal="up" style="--i:1">
+        We partner with industry-leading pro audio brands to deploy tier-one hardware
+        tailored to your sanctuary.
+      </p>
+    </div>
+
+    <ul class="hw-grid" data-reveal-group>
+      {brands.map((b, i) => (
+        <li class="hw-item" data-reveal="scale" style={`--i:${i}`}>
+          <span class="hw-name">{b.name}</span>
+          {b.sub && <span class="hw-sub">{b.sub}</span>}
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hardware {
+    border-top: 1px solid var(--line);
+    background: var(--bg-soft);
+  }
+
+  .hw-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    margin-top: 0.7rem;
+  }
+
+  .hw-copy {
+    max-width: 32ch;
+    color: var(--ink-dim);
+    font-size: 0.96rem;
+    line-height: 1.6;
+  }
+
+  .hw-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--line);
+  }
+
+  .hw-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 2.6rem 1rem;
+    border: 1px solid var(--line);
+    margin: -1px 0 0 -1px;
+    transition: background 0.35s var(--ease-out);
+  }
+
+  .hw-item:hover {
+    background: var(--panel);
+  }
+
+  .hw-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-transform: uppercase;
+    transition: color 0.3s var(--ease-out);
+  }
+
+  .hw-item:hover .hw-name {
+    color: var(--accent-2);
+  }
+
+  .hw-sub {
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  @media (max-width: 720px) {
+    .hw-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

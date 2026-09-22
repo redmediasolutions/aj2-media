@@ -1,0 +1,96 @@
+---
+---
+
+<section class="section connect" id="connect">
+  <div class="wrap connect-grid">
+    <div data-reveal="up">
+      <p class="eyebrow">Connect</p>
+      <h2 class="display connect-title">Sound built<br />to inspire.</h2>
+    </div>
+
+    <div class="connect-card" data-reveal="up" style="--i:1">
+      <p class="connect-name">John Gratien</p>
+      <a class="connect-line" href="tel:+919876543210" data-magnetic>
+        <span>Phone</span>
+        <strong>+91 98765 43210</strong>
+      </a>
+      <a class="connect-line" href="mailto:johngratien@gmail.com" data-magnetic>
+        <span>Email</span>
+        <strong>johngratien@gmail.com</strong>
+      </a>
+      <a class="connect-line" href="https://www.a2jmedia.com" target="_blank" rel="noopener" data-magnetic>
+        <span>Website</span>
+        <strong>www.a2jmedia.com</strong>
+      </a>
+
+      <a href="tel:+919876543210" class="btn btn-solid connect-btn" data-magnetic>Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .connect {
+    border-top: 1px solid var(--line);
+  }
+
+  .connect-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: end;
+  }
+
+  .connect-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: var(--ink);
+  }
+
+  .connect-card {
+    border-top: 1px solid var(--line-strong);
+    padding-top: 1.8rem;
+  }
+
+  .connect-name {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+    color: var(--accent-2);
+  }
+
+  .connect-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    border-top: 1px solid var(--line);
+    font-size: 1.05rem;
+    transition: padding-left 0.35s var(--ease-out), color 0.3s var(--ease-out);
+  }
+
+  .connect-line span {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .connect-line strong {
+    font-weight: 600;
+  }
+
+  .connect-line:hover {
+    padding-left: 0.6rem;
+    color: var(--accent-2);
+  }
+
+  .connect-btn {
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 780px) {
+    .connect-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

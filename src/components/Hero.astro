@@ -1,0 +1,282 @@
+---
+---
+
+<section class="hero" id="top" data-hero>
+  <div class="hero-media">
+    <img src="/images/ark-stage-rig.webp" alt="Line array speakers rigged above the ARK concert stage" />
+    <div class="hero-scrim"></div>
+  </div>
+
+  <div class="wrap hero-inner">
+    <p class="hero-kicker">
+      <span class="hero-kicker-line"></span>
+      Acoustics &amp; System Installation Services for Churches
+    </p>
+
+    <h1 class="hero-title display">
+      <span class="line"><span class="word">Sound</span></span>
+      <span class="line"><span class="word text-accent">Built</span></span>
+      <span class="line"><span class="word">to Inspire</span></span>
+    </h1>
+
+    <p class="hero-sub">Hear every word. Feel every praise.</p>
+
+    <div class="hero-foot">
+      <blockquote class="hero-quote">
+        “Sound (word of God) is the most critical part of the church — we at A2J Media Solutions strive to achieve the best possible solution for your church at the most affordable price.”
+      </blockquote>
+
+      <div class="hero-actions">
+        <a href="#connect" class="btn btn-solid" data-magnetic>Talk to us</a>
+        <a href="#work" class="btn" data-magnetic>See our work</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-caption">
+    <span>ARK Concert Stage Rig</span>
+  </div>
+
+  <a href="#work" class="hero-scroll" aria-label="Scroll to our work">
+    <span class="hero-scroll-track"><span class="hero-scroll-dot"></span></span>
+    Scroll
+  </a>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    padding-top: 6rem;
+  }
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 65%;
+    transform: scale(1.08);
+    animation: hero-media-in 1.8s var(--ease-out) forwards;
+    filter: saturate(1.05) contrast(1.05);
+  }
+
+  @keyframes hero-media-in {
+    to { transform: scale(1); }
+  }
+
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(11,10,8,0.55) 0%, rgba(11,10,8,0.35) 32%, rgba(11,10,8,0.88) 82%, var(--bg) 100%),
+      linear-gradient(90deg, rgba(11,10,8,0.65) 0%, rgba(11,10,8,0.1) 45%);
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    padding-bottom: clamp(3rem, 8vw, 5.5rem);
+  }
+
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--ink-dim);
+    margin-bottom: 1.4rem;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .hero-kicker-line {
+    width: 2.2rem;
+    height: 1px;
+    background: var(--accent-2);
+  }
+
+  .hero-title {
+    font-size: clamp(3.6rem, 11vw, 8.5rem);
+    color: var(--ink);
+  }
+
+  .hero-title .line {
+    display: block;
+    overflow: hidden;
+  }
+
+  .hero-title .word {
+    display: inline-block;
+    transform: translateY(105%);
+  }
+
+  .text-accent {
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    margin-top: 1.4rem;
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    opacity: 0;
+    transform: translateY(12px);
+    max-width: 30ch;
+  }
+
+  .hero-foot {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 3rem;
+    align-items: end;
+    border-top: 1px solid var(--line);
+    padding-top: 2rem;
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  .hero-quote {
+    margin: 0;
+    max-width: 46ch;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--ink-dim);
+    font-style: italic;
+    border-left: 2px solid var(--accent);
+    padding-left: 1.1rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-caption {
+    position: absolute;
+    z-index: 2;
+    top: 7.2rem;
+    right: var(--edge);
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0;
+  }
+
+  .hero-caption::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+
+  .hero-scroll {
+    position: absolute;
+    z-index: 2;
+    right: var(--edge);
+    bottom: 2.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    opacity: 0;
+  }
+
+  .hero-scroll-track {
+    width: 1px;
+    height: 2.6rem;
+    background: var(--line-strong);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-scroll-dot {
+    position: absolute;
+    top: -30%;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: var(--accent-2);
+    animation: scroll-run 2.2s var(--ease-in-out) infinite;
+  }
+
+  @keyframes scroll-run {
+    0% { top: -30%; }
+    60% { top: 100%; }
+    100% { top: 100%; }
+  }
+
+  /* -------- intro sequence -------- */
+  .hero-kicker,
+  .hero-sub,
+  .hero-foot,
+  .hero-caption,
+  .hero-scroll {
+    transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+  }
+
+  [data-hero].is-ready .hero-title .word {
+    animation: word-in 1s var(--ease-out) forwards;
+  }
+  [data-hero].is-ready .hero-title .line:nth-child(1) .word { animation-delay: 0.15s; }
+  [data-hero].is-ready .hero-title .line:nth-child(2) .word { animation-delay: 0.28s; }
+  [data-hero].is-ready .hero-title .line:nth-child(3) .word { animation-delay: 0.41s; }
+
+  @keyframes word-in {
+    to { transform: translateY(0%); }
+  }
+
+  [data-hero].is-ready .hero-kicker { opacity: 1; transform: none; transition-delay: 0.05s; }
+  [data-hero].is-ready .hero-sub { opacity: 1; transform: none; transition-delay: 0.55s; }
+  [data-hero].is-ready .hero-foot { opacity: 1; transform: none; transition-delay: 0.7s; }
+  [data-hero].is-ready .hero-caption { opacity: 1; transition-delay: 0.9s; }
+  [data-hero].is-ready .hero-scroll { opacity: 1; transition-delay: 1.05s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-media img { animation: none; transform: none; }
+    .hero-kicker, .hero-sub, .hero-foot, .hero-caption, .hero-scroll { opacity: 1; transform: none; }
+    .hero-title .word { transform: none; }
+  }
+
+  @media (max-width: 720px) {
+    .hero-foot {
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+    }
+    .hero-caption {
+      display: none;
+    }
+  }
+</style>
